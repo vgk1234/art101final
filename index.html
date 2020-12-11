@@ -1,105 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1 style="text-align: center;">Connection Quiz!</h1>
-  <p style="text-align: center;">Take this quiz to see which friend you would be likely to connect with!</p>
-  <p style="text-align: center;">Click 'submit' when you're done, and scroll down to see who you're matched with. Enjoy!</p>
-  <br>
-  <div>
-    <div class="question">
-    	<p>How much do you really want to talk to someone?</p>
-    </div>
-    <div class="answers">
-	  <input type="radio" name="q1" value="" onclick="friendA++">
-	  It’s not exactly urgent, but there are times when I feel kind of bored and I just want to talk.
-	  <br>
-	  <input type="radio" name="q1" value="" onclick="friendB++">
-	  It’s a bit empty where I am right now, and a conversation would be nice.
-	  <br>
-	  <input type="radio" name="q1" value="" onclick="friendC++">
-	  I really need a friend because I feel so lost, and I’m not interested in small talk.
-	  <br>
-    </div>
-  </div>
- <div>
-    <div class="question">
-		<p>What do you look for in a friend?</p>
-    </div>
-    <div class="answers">
-	  <input type="radio" name="q2" value="" onclick="friendA++">
-	  Someone who is approachable
-	  <br>
-	  <input type="radio" name="q2" value="" onclick="friendB++">
-	  Someone who is resourceful and I can have intelligent conversations with
-	  <br>
-	  <input type="radio" name="q2" value="" onclick="friendC++">
-	  Someone who is emotionally aware and can form close connections with me
-	  <br>
-    </div>
-  </div>
-  <div>
-    <div class="question">
-      <p>What are your hobbies?</p>
-    </div>
-    <div class="answers">
-	  <input type="radio" name="q3" value="" onclick="friendA++"> 
-	  Artsy - Eg. Sketching / painting, editing photos / videos, fashion
-	  <br>
-	  <input type="radio" name="q3" value="" onclick="friendB++">
-	  Device related - Eg. Gaming, watching movies, online chat
-	  <br>
-	  <input type="radio" name="q3" value="" onclick="friendC++">
-	  Domestic - Eg. Cooking / baking, home decorating, home workouts
-	  <br>
-    </div>
-  </div>
-  <div>
-    <div class="question">
-      <p>If you could go outside, what kind of place would you like to be in?</p>
-    </div>
-    <div class="answers">
-	  <input type="radio" name="q4" value="" onclick="friendA++">
-	  The mall, or some kind of shopping / food hub
-	  <br>
-	  <input type="radio" name="q4" value="" onclick="friendB++"> 
-	  A convention or a library
-	  <br>
-	  <input type="radio" name="q4" value="" onclick="friendC++">
-	  Some place where I can just observe nature
-	  <br>
-    </div>
-  </div>
-  <div>
-    <div class="question">
-      <p>How would you describe your personality?</p>
-    </div>
-    <div class="answers">
-	  <input type="radio" name="q5" value="" onclick="friendA++">
-	  I’m really outgoing and I love to make plans!
-	  <br>
-	  <input type="radio" name="q5" value="" onclick="friendB++">
-	  I like to keep to myself and am a bit more observant.
-	  <br>
-	  <input type="radio" name="q5" value="" onclick="friendC++">
-	  I’m really emotional / sensitive, I’m not so vocal but I have so much in my heart to give!
-	  <br>
+	<h1 style="text-align: center;">Quiz - Connect With A Pal!</h1>
+	<p style="text-align: center; margin: 0px 200px 0px 200px;"> Are you feeling lonely and lost in these awful times? You're not alone. 
+	Three virtual friends volunteer to contact you at least 2-3 times a week through the internet during quarantine.
+	Take this quiz to see which friend you can form the best connection with!</p>
+	<p style="text-align: center;"><i>Note: These are not real people who will contact you; familiar names mentioned are purely 
+	coincidental.</i></p>
+	<p style="text-align: center;">Click 'submit' when you're done, and see who you're matched with. Enjoy!</p>
+	<br>
+	<div id="prompt1">
+		<div class="question">
+			<p>How much do you really want to talk to someone?</p>
+		</div>
+		<div class="answers">
+			<input type="radio" name="q1" value="" onclick="friendA++">
+			It’s not exactly urgent, but there are times when I feel kind of bored and I just want to talk.
+			<br>
+			<input type="radio" name="q1" value="" onclick="friendB++">
+			It’s a bit empty where I am right now, and a conversation would be nice.
+			<br>
+			<input type="radio" name="q1" value="" onclick="friendC++">
+			I really need a friend because I feel so lost, and I’m not interested in small talk.
+			<br>
+		</div>
+	</div>
+	<div id="prompt2">
+		<div class="question">
+			<p>What do you look for in a friend?</p>
+		</div>
+		<div class="answers">
+			<input type="radio" name="q2" value="" onclick="friendA++">
+			Someone who is approachable
+			<br>
+			<input type="radio" name="q2" value="" onclick="friendB++">
+			Someone who is resourceful and I can have intelligent conversations with
+			<br>
+			<input type="radio" name="q2" value="" onclick="friendC++">
+			Someone who is emotionally aware and can form close connections with me
+			<br>
+		</div>
+	</div>
+	<div id="prompt3">
+		<div class="question">
+		<p>What are your hobbies?</p>
+		</div>
+		<div class="answers">
+			<input type="radio" name="q3" value="" onclick="friendA++"> 
+			Artsy - Eg. Sketching / painting, editing photos / videos, fashion
+			<br>
+			<input type="radio" name="q3" value="" onclick="friendB++">
+			Device related - Eg. Gaming, watching movies, online chat
+			<br>
+			<input type="radio" name="q3" value="" onclick="friendC++">
+			Domestic - Eg. Cooking / baking, home decorating, home workouts
+			<br>
+		</div>
+	</div>
+	<div id="prompt4">
+		<div class="question">
+		<p>If you could go outside, what kind of place would you like to be in?</p>
+		</div>
+		<div class="answers">
+			<input type="radio" name="q4" value="" onclick="friendA++">
+			The mall, or some kind of shopping / food hub
+			<br>
+			<input type="radio" name="q4" value="" onclick="friendB++"> 
+			A convention or a library
+			<br>
+			<input type="radio" name="q4" value="" onclick="friendC++">
+			Some place where I can just observe nature
+			<br>
+		</div>
+	</div>
+	<div id="prompt5">
+		<div class="question">
+		<p>How would you describe your personality?</p>
+		</div>
+		<div class="answers">
+			<input type="radio" name="q5" value="" onclick="friendA++">
+			I’m really outgoing and I love to make plans!
+			<br>
+			<input type="radio" name="q5" value="" onclick="friendB++">
+			I like to keep to myself and am a bit more observant.
+			<br>
+			<input type="radio" name="q5" value="" onclick="friendC++">
+			I’m really emotional / sensitive, I’m not so vocal but I have so much in my heart to give!
+			<br>
+		</div>
 	</div>
 	<br>
 	<button id="submit-btn" class="btn btn-primary btn-lg">Submit</button>
-  </div>
-  <br>
-  <br>
-  <br>
-  <div class="container text-center results hide">
-	<p id="results" style="text-align: center;"></p>
-  </div>
-</div>
-  <script src="sketch.js"></script>
+	<br>
+	<br>
+	<div id="results" class="container text-center results hide">
+	</div>
+	<script src="sketch.js"></script>
 </body>
 </html>
