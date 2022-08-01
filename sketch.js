@@ -2,6 +2,10 @@ let friendA = 0;
 let friendB = 0;
 let friendC = 0;
 
+console.log(friendA);
+console.log(friendB);
+console.log(friendC);
+
 document.getElementById("submit-btn").addEventListener("click", results);
 
 function results() { 
